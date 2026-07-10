@@ -7,6 +7,17 @@
     <title>My Collection</title>
     <link rel="shortcut icon" href="./img/PasFoto.jpeg" type="image/x-icon" />
 
+    <meta property="og:title" content="Mhd Jihad - Front-End Developer" />
+    <meta
+      property="og:description"
+      content="Kumpulan project website modern dan responsif."
+    />
+    <meta property="og:image" content="./img/PasFoto.jpeg" />
+    <meta
+      property="og:url"
+      content="https://muhammadjihad99.github.io/collection/"
+    />
+
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -250,12 +261,100 @@
     </div>
 
     <!-- Floating Contact -->
+    <div class="floating-buttons">
+      <a
+        href="https://wa.me/6282178283463"
+        class="floating-btn whatsapp"
+        target="_blank"
+        aria-label="Whatsapp"
+        data-tooltip="Whatsapp"
+      >
+        <i class="fa-brands fa-whatsapp"></i>
+      </a>
 
-    <a href="mailto:jiydeveloper" class="floating-contact">
-      <i class="fa-regular fa-envelope"></i>
+      <a
+        href="javascript:void(0)"
+        onclick="togglePopup()"
+        class="floating-btn website"
+        aria-label="Paket Website"
+        data-tooltip="Paket Website"
+      >
+        <i class="fa-solid fa-globe"></i>
+      </a>
+    </div>
 
-      Contact
-    </a>
+    <div class="popup-overlay" id="packagePopup">
+      <div class="popup-content">
+        <button class="close-btn" onclick="togglePopup()">
+          <i class="fa-solid fa-times"></i>
+        </button>
+        <h2>Pilihan Paket Website</h2>
+        <div class="package-grid">
+          <div class="package-item">
+            <div class="badge">Populer</div>
+            <h3>Silver</h3>
+            <p class="price">Rp 1.000.000</p>
+            <ul class="features">
+              <li><i class="fa-solid fa-check"></i> 1 Landing Page</li>
+              <li>
+                <i style="color: red" class="fa-solid fa-close"></i> Database
+                MySQL
+              </li>
+              <li><i class="fa-solid fa-check"></i> Data Program</li>
+              <li>
+                <i
+                  style="color: red"
+                  class="fa-solid fa-close"
+                  class="fa-solid fa-check"
+                ></i>
+                Maintenance
+              </li>
+              <li><i class="fa-solid fa-check"></i> Hosting + Domain .my.id</li>
+            </ul>
+            <a
+              href="https://wa.me/6282178283463?text=Saya tertarik paket Silver"
+              class="order-btn"
+              >Pesan</a
+            >
+          </div>
+          <div class="package-item">
+            <h3>Gold</h3>
+            <p class="price">Rp 2.500.000</p>
+            <ul class="features">
+              <li>
+                <i style="color: red" class="fa-solid fa-close"></i> Free
+                Landing Page
+              </li>
+              <li><i class="fa-solid fa-check"></i> Data Program</li>
+              <li><i class="fa-solid fa-check"></i> Database MySQL</li>
+              <li><i class="fa-solid fa-check"></i> Maintenance 1 Bulan</li>
+              <li><i class="fa-solid fa-check"></i> Hosting + Domain .com</li>
+            </ul>
+            <a
+              href="https://wa.me/6282178283463?text=Saya tertarik paket Gold"
+              class="order-btn"
+              >Pesan</a
+            >
+          </div>
+          <div class="package-item">
+            <h3>Premium</h3>
+            <p class="price">Rp 5.000.000</p>
+            <ul class="features">
+              <li><i class="fa-solid fa-check"></i> Free Landing Page</li>
+              <li><i class="fa-solid fa-check"></i> Data program</li>
+              <li><i class="fa-solid fa-check"></i> Database MySQL</li>
+              <li><i class="fa-solid fa-check"></i> Hosting Cloud</li>
+              <li><i class="fa-solid fa-check"></i> Maintenance 3 bln</li>
+            </ul>
+            <a
+              href="https://wa.me/6282178283463?text=Saya tertarik paket Premium"
+              class="order-btn"
+              >Pesan</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>
