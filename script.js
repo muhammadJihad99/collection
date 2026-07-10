@@ -29,3 +29,24 @@ transform .6s ease ${index * 120}ms`;
 
   observer.observe(card);
 });
+
+const floatingButtons = document.querySelector(".floating-buttons");
+
+window.addEventListener("scroll", () => {
+  const scrollTop = window.scrollY;
+  const windowHeight = window.innerHeight;
+  const documentHeight = document.documentElement.scrollHeight;
+
+  // Jika sudah sampai bawah halaman
+  if (scrollTop + windowHeight >= documentHeight - 10) {
+    floatingButtons.classList.add("hide");
+  } else {
+    floatingButtons.classList.remove("hide");
+  }
+});
+
+
+function togglePopup() {
+    const popup = document.getElementById('packagePopup');
+    popup.classList.toggle('active');
+}
