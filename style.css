@@ -827,7 +827,7 @@ footer {
   transition: 0.7s;
 }
 
-/* Memicu animasi saat kartu di-hover */
+
 .package-item:hover::before {
   left: 150%;
 }
@@ -915,4 +915,64 @@ footer {
 
 .features li i.fa-close {
   color: #ff4141;
+}
+
+.extra-link {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transform: translateY(-25px);
+  pointer-events: none;
+  margin-top: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  transition:
+    max-height 0.5s ease,
+    opacity 0.4s ease,
+    transform 0.5s ease,
+    margin 0.5s ease;
+}
+
+.links.show-all .extra-link {
+  max-height: 120px;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  margin-top: 18px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+
+.show-more-btn {
+  margin: 35px auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 14px 30px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  color: #fff;
+  font-family: "Outfit", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  backdrop-filter: blur(15px);
+  transition: 0.35s ease;
+}
+
+.show-more-btn:hover {
+  background: #fff;
+  color: #111;
+  transform: translateY(-5px);
+}
+
+.show-more-btn i {
+  transition: 0.35s ease;
+}
+
+.show-more-btn.active i {
+  transform: rotate(180deg);
 }
