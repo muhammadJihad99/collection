@@ -22,12 +22,17 @@ const observer = new IntersectionObserver(
 
 reveals.forEach((el) => observer.observe(el));
 
-document.querySelectorAll(".link-card").forEach((card, index) => {
-  card.style.transition = `
-opacity .6s ease ${index * 120}ms,
-transform .6s ease ${index * 120}ms`;
+document.querySelectorAll(".link-card:not(.extra-link)")
+.forEach((card,index)=>{
 
-  observer.observe(card);
+card.style.transition =
+`
+opacity .6s ease ${index * 120}ms,
+transform .6s ease ${index * 120}ms
+`;
+
+observer.observe(card);
+
 });
 
 const floatingButtons = document.querySelector(".floating-buttons");
@@ -37,7 +42,7 @@ window.addEventListener("scroll", () => {
   const windowHeight = window.innerHeight;
   const documentHeight = document.documentElement.scrollHeight;
 
-  // Jika sudah sampai bawah halaman
+  
   if (scrollTop + windowHeight >= documentHeight - 10) {
     floatingButtons.classList.add("hide");
   } else {
@@ -45,8 +50,29 @@ window.addEventListener("scroll", () => {
   }
 });
 
-
 function togglePopup() {
-    const popup = document.getElementById('packagePopup');
-    popup.classList.toggle('active');
+  const popup = document.getElementById("packagePopup");
+  popup.classList.toggle("active");
 }
+
+
+
+
+
+const showMoreBtn = document.getElementById("showMoreBtn");
+
+const projectLinks = document.getElementById("projectLinks");
+
+showMoreBtn.addEventListener("click", () => {
+  projectLinks.classList.toggle("show-all");
+
+  showMoreBtn.classList.toggle("active");
+
+  const text = showMoreBtn.querySelector("span");
+
+  if (projectLinks.classList.contains("show-all")) {
+    text.textContent = "Tutup";
+  } else {
+    text.textContent = "Lihat Semua";
+  }
+});
